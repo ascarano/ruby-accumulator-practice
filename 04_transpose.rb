@@ -2,6 +2,18 @@
 #
 # You can use any methods you like on the input array except `#transpose`
 def transpose(array)
+  result = []
+  count = array.length
+
+  while count > 0
+    thing = []
+    array.each do |item|
+      thing << item[count - 1]
+    end
+    result << thing
+    count -= 1
+  end
+  result.reverse
 end
 
 require 'rspec'

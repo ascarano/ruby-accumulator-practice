@@ -2,7 +2,14 @@
 # Then make it so that if you don't pass a delimiter, it just concatenates them all together
 #
 # You can only use the `#each` method on the input array
-
+def join(array, delimeter = "", &block)
+  result = ""
+  array.each do |item|
+    result = result + "#{item + delimeter}"
+  end
+  result = result.chomp(delimeter)
+  result
+end
 
 require 'rspec'
 require 'rspec/autorun'

@@ -3,6 +3,19 @@
 #
 # You can use any methods you like on the input array
 def to_sentence(array)
+  result = ''
+  if array.empty?
+    result
+  else
+    array.insert(-2, 'and')
+    tom = array.reverse[0..1]
+    tom = tom.reverse.join(" ")
+    array.pop
+    array.pop
+    joe = array.join(', ')
+    result = "#{joe} #{tom}"
+  end
+  result
 end
 
 require 'rspec'
